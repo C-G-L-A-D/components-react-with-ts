@@ -6,9 +6,11 @@ const LikeButton: React.FC = () => {
 
   // 首次加载和每次渲染之后都会执行 useEffect
   useEffect(() => {
+    console.log('document title effect is running', count)
+
     document.title = `点击了 ${count} 次`
     return () => {}
-  })
+  }, [count])
 
   return (
     <>

@@ -18,7 +18,8 @@ const MouseTracker: React.FC = () => {
       // 清除
       document.removeEventListener('click', updateMouse)
     }
-  })
+  }, []) // 传递数组，可包含依赖值，只有依赖值更新才更新渲染
+
   console.log('before render', position.x)
 
   return (
