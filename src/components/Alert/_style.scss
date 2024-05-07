@@ -1,0 +1,22 @@
+$alert-colors: (
+  'defalut': $primary,
+  'success': $success,
+  'warning': $warning,
+  'danger': $danger
+);
+
+.alert {
+  position: relative;
+
+  padding: $alert-padding-x $alert-padding-y;
+  border-radius: $alert-border-radius;
+  border: $alert-border-width solid $border-color;
+  font-weight: $alert-title-font-weight;
+  font-size: $font-size-base;
+  background: $color;
+  margin-bottom: $alert-margin-bottom;
+  > .alert-desc {
+    font-size: $alert-description-font-size;
+    margin-top: $alert-description-top-margin;
+  }
+}

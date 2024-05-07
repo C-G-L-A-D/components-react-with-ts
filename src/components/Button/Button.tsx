@@ -23,12 +23,12 @@ interface BaseButtonProps {
 }
 
 // React.ButtonHTMLAttributes<HTMLElement> 原生 button 属性
-// & 表示 交叉类型
+// & 表示 并集
 type NativeButtonProps = React.ButtonHTMLAttributes<HTMLElement> & BaseButtonProps
 // a 链接属性
 type AnchorButtonProps = React.AnchorHTMLAttributes<HTMLElement> & BaseButtonProps
 
-// Partial 讲 属性设置为可选
+// Partial 将接口类型定义的所有属性变成可选的
 export type ButtonProps = Partial<NativeButtonProps & AnchorButtonProps>
 
 const Button: React.FC<BaseButtonProps> = props => {
@@ -37,7 +37,7 @@ const Button: React.FC<BaseButtonProps> = props => {
 
   // 默认拥有 btn 类名，后面集合动态添加
 
-  const classes = classnames('btn', {
+  const classes = classnames('btn', className, {
     [`btn-${btnType}`]: btnType,
     [`btn-${size}`]: size,
     disabled: btnType === ButtonType.Link && disabled // a 链接标签没有这个属性，需要动态添加
