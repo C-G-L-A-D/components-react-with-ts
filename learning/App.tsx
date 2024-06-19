@@ -1,6 +1,8 @@
 import React, { createContext } from 'react'
-import logo from './logo.svg'
+import logo from '../src/logo.svg'
 import './App.css'
+import Button, { ButtonType, ButtonSize } from '../learning/components/Button/Button'
+import Alert, { AlertType } from '../learning/components/Alert/Alert'
 
 interface IThemeProps {
   [key: string]: { color: string; background: string }
