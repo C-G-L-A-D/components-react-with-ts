@@ -1,16 +1,17 @@
-import React from 'react'
-import Button, { ButtonType, ButtonSize } from './components/Button/Button'
-import Alert, { AlertType } from './components/Alert/Alert'
+import React, { useState } from 'react'
+import useInterval from './hooks/useInterval'
 
 const App: React.FC = () => {
+  const [count, setCount] = useState(0)
+
+  // 每隔1秒执行一次增加count的函数
+  useInterval(() => {
+    setCount(count + 1)
+  }, 1000)
+
   return (
-    <div className='App'>
-      <header className='App-header'>
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <h1>hello world</h1>
-      </header>
+    <div>
+      <p>Count: {count}</p>
     </div>
   )
 }
